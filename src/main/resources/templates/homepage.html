@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTJ Devices</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/homepage.css">
+
+</head>
+<body>
+
+    <header>
+        <img src="https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA=" alt="Grocery Store Logo" width="50" height="50">
+        <h1> Welcome to NTJ Devices </h1>
+    </header>
+
+
+    <nav>
+        <a href="#home" class="nav-link" data-section="home">Home</a>
+        <a href="#device-section" class="nav-link" data-section="device-section" onclick="scrollToSection('device-section')">Devices</a>
+        <a href="/email" class="nav-link" data-section="device-section">Place Order</a>
+        <a href="/membership" class="nav-link" data-section="device-section">Apply for Exclusive Membership</a>
+        <a href="/view" class="nav-link" data-section="device-section">View Prices And Other Devices</a>
+        <a href="/dashboard" class="nav-link" onclick="confirmLogout()">Logout</a>
+       
+    </nav>
+ <div>
+              <form th:action="@{/homepage/search}" method="get" class="form-inline">
+              <input type="text" th:name="query" class="form-control mr-sm-2" placeholder="Search">
+              <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+              </form>
+       </div>
+    <main>
+        <!-- Devices Section -->	
+        <section class="product-section" id="device-section">
+            <!-- Thymeleaf expression to iterate over products -->
+            <div th:each="product : ${products}">
+                <div class="product">
+                    <img th:src="${product.imageUrl}" alt="Product Image">
+                    <h3 th:text="${product.name}"></h3>
+                    <p th:text="'Price: $' + ${product.price}"></p>
+                    <p>        <img src="https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA=" alt="Grocery Store Logo" width="20" height="20">
+<h5>Double tap to add to cart</h5></p>
+                </div>
+            </div>
+            
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank You For Working With Us | Contact us to order at: <a href="/email">Order</a> | Follow us on: <a href="https://twitter.com/" target="_blank">Twitter</a></p>
+    </footer>
+
+   <script>
+    // Add an event listener to detect scroll events
+    document.addEventListener('scroll', function () {
+        // Get all sections
+        const sections = document.querySelectorAll('.product-section');
+
+        // Find the currently visible section
+        let currentSection = '';
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top <= window.innerHeight * 0.5) {
+                currentSection = section.id;
+            }
+        });
+
+        // Remove the 'active' class from all links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Add the 'active' class to the link corresponding to the visible section
+        if (currentSection) {z
+            document.querySelector(`[data-section="${currentSection}"]`).classList.add('active');
+        }
+    });
+
+    // Function to scroll to a specific section
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+<!-- Add this script tag after the existing script tags in your HTML -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if the browser supports notifications
+        if (!('Notification' in window)) {
+            console.warn('This browser does not support desktop notifications.');
+            return;
+        }
+
+        // Request permission to show notifications
+        Notification.requestPermission().then(function (permission) {
+            if (permission !== 'granted') {
+                console.warn('Permission to show notifications has been denied.');
+            }
+        });
+
+        // Add a double click event listener to all product elements
+        document.querySelectorAll('.product').forEach(product => {
+            product.addEventListener('dblclick', function () {
+                // Get the product name and display a notification
+                const productName = product.querySelector('h3').innerText;
+                addToCartNotification(productName);
+            });
+        });
+    });
+
+    function addToCartNotification(productName) {
+        // Use a browser notification to inform the user
+        if (Notification.permission === 'granted') {
+            new Notification('Product Added to Cart', {
+                body: `Product "${productName}" has been added to your cart.`,
+                icon: 'https://cdn-icons-png.flaticon.com/512/263/263142.png'
+            });
+        }
+    }
+</script>
+
+
+    <script>
+        function confirmLogout() {
+            // Display a confirmation dialog
+            var isLogoutConfirmed = confirm("Are you sure you want to logout");
+
+            // Check the user's choice
+            if (isLogoutConfirmed) {
+                // If confirmed, redirect to the logout URL
+                window.location.href = "/logout";
+            } else {
+                // If canceled, do nothing (stay on the current page)
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

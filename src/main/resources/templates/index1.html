@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incorrect Password or Username</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+    <div class="success-message">
+		<img src="https://static.vecteezy.com/system/resources/previews/011/193/361/original/check-mark-and-cross-mark-icon-tick-symbol-in-red-color-illustration-vector.jpg" alt="Logo">
+        <h2>Incorrect Password or Username</h2>
+        <p>Please verify and try to login in again .</p>
+        <br>
+        <div class="button-container">
+			<a th:href="@{/login}" class="btn btn-primary btn-sm mb-3">Try Login Again</a>
+            <a th:href="@{/dashboard}" class="btn btn-primary btn-sm mb-3">Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

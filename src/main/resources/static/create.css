@@ -1,0 +1,127 @@
+body {
+	background-image: url('https://t3.ftcdn.net/jpg/00/21/70/82/360_F_21708280_RFKz4O7ImQluB9FgX2mUYFUNDmlLokX6.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+}
+
+
+.navbar-buttons {
+	float: right;
+    display: flex;
+    gap: 10px; 	
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+    border: 1px solid #007bff;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.container {
+    margin-top: 1%;
+    margin-right: 25%;
+    display: flex;
+    justify-content: center; 
+    border-radius: 21%;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+}
+
+.form-container {
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-top: 5px;
+}
+
+.box-footer {
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+h1.text-center {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+button {
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .navbar-buttons {
+        margin-top: 10px;
+    }
+}

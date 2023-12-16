@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply for Membership</title>
+    <link rel="icon" href=" https://play-lh.googleusercontent.com/KSuaRLiI_FlDP8cM4MzJ23ml3og5Hxb9AapaGTMZ2GgR103mvJ3AAnoOFz1yheeQBBI" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/email.css">
+</head>
+<body>
+
+    <form th:action="@{/member}" method="post">
+        <h2>Application For Membership</h2>
+
+        <label for="email">Enter Your Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="address">Enter Your Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="number">Enter Your Number:</label>
+        <input type="text" id="number" name="number" required>
+
+        <label for="workingSince">Been Working With Us Since:</label>
+        <input type="date" id="workingSince" name="workingSince" required>
+
+        <label for="reason">Reason You Want To Be a Member:</label>
+        <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

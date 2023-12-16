@@ -1,0 +1,100 @@
+body {
+	background-image: url('https://t3.ftcdn.net/jpg/00/21/70/82/360_F_21708280_RFKz4O7ImQluB9FgX2mUYFUNDmlLokX6.jpg');
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+}
+
+h2 {
+    color: rgba(0, 0, 0, 0.9); /* Adjust text color transparency */
+    text-align: center; /* Center the text */
+}
+
+form {
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust form background transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select option {
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust dropdown option transparency */
+    color: #333;
+}
+
+select option:checked {
+    background-color: #45a049;
+    color: #fff;
+}
+
+label {
+    font-size: 18px;
+    color: rgba(85, 85, 85, 0.9); /* Adjust label text color transparency */
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust input background transparency */
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust submit button background transparency */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Add the following CSS for date input */
+input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust date input background transparency */
+}
+
+/* Adjust the appearance of the date input arrow button */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invert the color of the arrow */
+}
+

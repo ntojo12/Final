@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <h1>Customer Relationship Management System</h1>
+        <div class="navbar-buttons">
+            <a th:href="@{/dashboard}" class="btn btn-primary btn-sm mb-3">Back to Dashboard</a>
+            <a th:href="@{/customers/new}" class="btn btn-primary btn-sm mb-3">Create Account</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <img src="https://i0.wp.com/www.csscodelab.com/wp-content/uploads/2019/11/lock-icon-on-off-css-only-checkbox-inspired-design.png?fit=832%2C508&ssl=1" alt="Logo">
+        <h1>Login</h1>
+        <p>Hello Customer Enter Your Credentials To Login Into Your Portal </p>
+
+        <form th:action="@{/login}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+
+            <div class="button-container">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+	

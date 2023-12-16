@@ -1,0 +1,62 @@
+body {
+	background-image: url('https://t3.ftcdn.net/jpg/00/21/70/82/360_F_21708280_RFKz4O7ImQluB9FgX2mUYFUNDmlLokX6.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px; 
+    width: 100%;
+    border-radius: 5%;
+    border: black;
+}
+
+h2,h4 {
+    color: white;
+}
+
+p {
+    margin-top: 10px;
+}
+
+strong {
+    color: #007bff;
+}
+
+iframe {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+#documentList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#documentList li {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+#documentList a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+#documentList a:hover {
+    background-color: #007bff;
+    color: #fff;
+}

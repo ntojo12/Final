@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Customer Management System</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" th:href="@{/list.css}">
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <h1>DATABASE OF ALL CUSTOMERS</h1>
+    </div>
+    
+     <div class="row">
+        <form th:action="@{/customers/search}" method="get" class="form-inline">
+        <input type="text" th:name="query" class="form-control mr-sm-2" placeholder="Search">
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        </form>
+    </div>
+    
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:if="${#lists.isEmpty(customers)}">
+            <td colspan="8" class="text-center">No customers found</td>
+        </tr>
+        <tr th:each="customer: ${customers}">
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.userName}"></td>
+            <td th:text="${customer.email}"></td>
+            <td th:text="${customer.number}"></td>
+            <td th:text="${customer.address}"></td>
+            <td th:text="${customer.password}"></td>
+            <td>
+                <a th:href="@{/customers/edit/{id}(id=${customer.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/customers/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+   
+
+   <div class="navbar-buttons">
+        <a th:href="@{/customers/new}">ADD CUSTOMERS</a>
+        <a th:href="@{/dashboard}">BACK TO DASHBOARD</a>
+        <a th:href="@{/admin}">BACK</a>
+        
+    </div>
+    
+    
+</div>
+</body>
+</html>
