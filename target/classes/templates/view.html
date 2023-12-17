@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Add your head content here -->
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/view.css">
+    <title>Document View</title>
+</head>
+<body>
+   <div class="container">
+        <h2>Prices And Other Devices</h2>
+        <h4>Click To Download</h4>
+
+        <!-- Display uploaded documents dynamically -->
+        <ul id="documentList">
+            <li th:each="document : ${documents}">
+                <a th:href="@{/api/documents/download/{documentId}(documentId=${document.id})}" target="_blank" th:text="${document.name}"></a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- JavaScript for making AJAX request -->
+    <div class="container">
+    <script>
+        $(document).ready(function() {
+            // Function to fetch and display documents
+            function loadDocuments() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/documents/getDocuments',
+                    success: function(documents) {
+                        // Update the document list on the page
+                        var documentList = $('#documentList');
+                        documentList.empty();
+
+                        $.each(documents, function(index, document) {
+                            documentList.append('<li><a href="/api/documents/download/' + document.id + '" target="_blank">' + document.name + '</a></li>');
+                        });
+                    },
+                    error: function() {
+                        // Handle the error as needed
+                        alert('Error fetching documents');
+                    }
+                });
+            }
+
+            // Initial load of documents
+            loadDocuments();
+
+            // Optional: Add a button or trigger to refresh the document list
+            $('#refreshButton').click(function() {
+                loadDocuments();
+            });
+        });
+    </script>
+ </div>
+    <!-- Add your additional content or styling here -->
+</body>
+</html>

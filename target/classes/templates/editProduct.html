@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Product</title>
+    <link rel="stylesheet" type="text/css" href="/admin.css">
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+</head>
+<body>
+ <header>
+        <div class="navbar">
+          <a href="/admin"><button>Back to Admin Portal</button></a>
+         <h2>Edit Product</h2>
+            
+        </div>
+    </header>
+   
+
+    <form th:action="@{/updateProduct}" th:object="${product}" method="post">
+        <!-- Add your form fields for editing product details -->
+        <input type="hidden" th:field="*{id}" />
+
+        <label>Name: <input type="text" th:field="*{name}" /></label><br/>
+        <label>Price: <input type="text" th:field="*{price}" /></label><br/>
+        <label>Image URL: <input type="text" th:field="*{imageUrl}" /></label><br/>
+        
+        <button type="submit">Save</button>
+    </form>
+
+ 
+
+
+</body>
+</html>

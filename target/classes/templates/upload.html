@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/upload.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h2>Upload Document</h2>
+    
+    
+    <form id="uploadForm" action="/api/documents/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a document:</label>
+        <input type="file" name="file" id="file" required>
+        <button type="submit">Upload</button>
+         <div class="navbar">
+            <ul>
+                <li><a th:href="@{/admin}">Back</a></li>
+            </ul>
+        </div>
+    </form> 
+
+    <!-- Display uploaded documents dynamically -->
+    <ul id="documentList"></ul>
+
+    <!-- JavaScript for making AJAX request -->
+    <script>
+        $(document).ready(function() {
+            // Function to fetch and display documents
+            function loadDocuments() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/documents/getDocuments',
+                    success: function(documents) {
+                        // Update the document list on the page
+                        var documentList = $('#documentList');
+                        documentList.empty();
+
+                        $.each(documents, function(index, document) {
+                            documentList.append('<li>' +
+                                '<a href="/api/documents/download/' + document.id + '" target="_blank">' + document.name + '</a>' +
+                                '<button onclick="deleteDocument(' + document.id + ')">Delete</button>' +
+                                '</li>');
+                        });
+                    },
+                    error: function() {
+                        // Handle the error as needed
+                        alert('Error fetching documents');
+                    }
+                });
+            }
+
+            // Initial load of documents
+            loadDocuments();
+
+            // Optional: Add a button or trigger to refresh the document list
+            $('#refreshButton').click(function() {
+                loadDocuments();
+            });
+        });
+
+        // Function to handle document deletion
+        function deleteDocument(documentId) {
+            $.ajax({
+                type: 'DELETE',
+                url: '/api/documents/delete/' + documentId,
+                success: function() {
+                    alert('Document deleted successfully');
+                    // Reload the document list
+                    loadDocuments();
+                },
+                error: function() {
+                    // Handle the error as needed
+                    alert('Error deleting the document');
+                }
+            });
+        }
+
+        
+    </script>
+</body>
+</html>

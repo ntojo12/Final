@@ -1,0 +1,157 @@
+body {
+	
+   background-image: url('https://t3.ftcdn.net/jpg/00/21/70/82/360_F_21708280_RFKz4O7ImQluB9FgX2mUYFUNDmlLokX6.jpg');
+    background-size: cover;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: black;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px; /* Add margin to the buttons container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.navbar-buttons a {
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.navbar-buttons a:hover {
+    background-color: #333;
+    color: #fff;
+}
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 auto; /* Added to center the content horizontally */
+    width: 80%; /* Adjust as needed */
+    max-width: 600px; /* Set a maximum width */
+}
+
+h1 {
+	
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center; /* Center the text */
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin-top: 50px; /* Adjust the margin as needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #000;
+    color: #fff;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency here */
+    color: #333;
+}
+
+/* Button Styles */
+a {
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color:black;    
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Adjusted margin for the buttons container */
+.col-lg-3 {
+    margin-top: 20px;
+}
+
+/* Background Image */
+form.form-inline {
+    display: flex;
+    justify-content: right;
+    margin-top: 50px;
+   
+}
+
+form.form-inline input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 21px;
+}
+
+form.form-inline button {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 21px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+}
+
+form.form-inline button:hover {
+    background-color: #218838;
+}

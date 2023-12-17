@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Portal</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/admin.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a th:href="@{/customers}">VIEW ALL CUSTOMERS</a></li>
+                <li><a th:href="@{/addProductForm}" >ADD PRODUCTS</a></li>
+                <li><a th:href="@{/upload}" >ADD MENUS</a></li>
+                <li><a th:href="@{/dashboard}">BACK TO DASHBOARD</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="welcome-container">
+        <h1>ADMIN PORTAL</h1>
+    </div>
+  
+    <!-- Grocery Section -->
+    <section class="product-section" id="grocery-section">
+        <!-- Iterate over the list of products -->
+        <div th:each="product : ${products}" class="product">
+            <img th:src="${product.imageUrl}" alt="Product Image">
+            <h3 th:text="${product.name}"></h3>
+            <p th:text="'Price: $' + ${product.price}"></p>
+            <div class="edit-delete-links">
+                <a th:href="@{'/editProduct/' + ${product.id}}">Edit</a>
+                <a th:href="@{'/deleteProduct/' + ${product.id}}">Delete</a>
+            </div>
+        </div>
+    </section>
+
+   
+</body>
+</html>

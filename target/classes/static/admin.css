@@ -1,0 +1,241 @@
+body {
+	background-image: url('https://t3.ftcdn.net/jpg/00/21/70/82/360_F_21708280_RFKz4O7ImQluB9FgX2mUYFUNDmlLokX6.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.welcome-container {
+    background-color: black	;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: -1px;        
+}
+
+ .welcome-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+ .welcome-container p {
+    font-size: 12px;
+    margin: 5px 0;
+ }
+
+.portal-sections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.section {
+   
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    margin-right: 10px;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+#logoutButton { 
+    background-color: #4668ff;
+    color: #fff;
+    border: none;
+    padding: 25px 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #2b00ff;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+}
+
+.product-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    border-bottom: 2px solid #ddd;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: grey;
+}
+
+
+.edit-delete-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.edit-delete-links a {
+    background-color: black; 
+    color: white;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    text-decoration: none; 
+}
+
+
+.edit-delete-links a:hover {
+    background-color: gray; 
+}
+
+
+/* Add these styles for the edit product form */
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto; 
+    width: 50%;
+    margin-top: 5%;
+    
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border-radius: 16px ;
+}
+
+form button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 40%;
+   
+}
+
+form button:hover {
+    background-color: grey;
+}
+h2 {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+
+

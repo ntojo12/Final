@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTJ Devices - Customer Relationship Management</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        
+    </div>
+
+    <div class="hero-section">
+        <h1>Welcome to NTJ Devices</h1>
+        <p>Your destination for the latest and most advanced devices.</p>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Our Services</h2>
+
+        <div class="card-container">
+            <div class="card service">
+                <img src="https://png.pngtree.com/png-clipart/20230918/original/pngtree-smartphone-payment-icon-for-mobile-banking-web-banking-transfer-vector-png-image_12371510.png" alt="Service 1 Image">
+                <h3>Device Sales</h3>
+                <p>Explore our collection of cutting-edge devices and make a purchase with confidence.</p>
+            </div>
+
+            <div class="card service">
+                <img src="https://cdn3.iconfinder.com/data/icons/e-commerce-outline-17/64/Membership-512.png" alt="Service 2 Image">
+                <h3>Exclusive Memberships</h3>
+                <p>Join our exclusive membership program for special discounts and updates.</p>
+            </div>
+      
+       <div class="card service">
+		    <img src="https://static.thenounproject.com/png/4181324-200.png" alt="Service 2 Image">
+            <h3>About NTJ Devices</h3>
+            <p>We are dedicated to providing high-quality devices with a focus on innovation and customer satisfaction.</p>
+        </div>
+
+        <div class="card service">
+		    <img src="https://cdn-icons-png.flaticon.com/512/7269/7269995.png" alt="Contacts Icon" style="max-width: 100px; max-height: 100px;">
+            <h3>Contact Us</h2>
+            <div class="contact-info">
+                <p>Email: cmanagement456@gmail.com</p>
+                <p>Phone: +250780078695</p>
+                <p>Address: Kigali, Rwanda</p>
+            </div>
+        </div>
+    </div>
+     </div>
+     
+     <div class="navbar-buttons">
+        <a th:href="@{/customers/new}">CREATE ACCOUNT</a>
+        <a th:href="@{/login}">CUSTOMER LOGIN</a>
+        <a href="#" onclick="showLoginForm1()">ADMINISTRATOR LOGIN</a>
+    </div>
+     
+    
+    
+    <div class="login-form" id="loginForm" style="display: none;">
+        <form th:action="@{/admin}" onsubmit="return validateAdminLogin()">
+            <label for="adminUsername">ADMIN USERNAME:</label>
+            <input type="text" id="adminUsername" name="adminUsername" required>
+            <label for="adminPassword">ADMIN PASSWORD:</label>
+            <input type="password" id="adminPassword" name="adminPassword" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="login-form1" id="loginForm1" style="display: none;">
+        <form th:action="@{/admin}" onsubmit="return validateLogin()">
+            <label for="Username">ADMIN USERNAME:</label>
+            <input type="text" id="Username" name="Username" required>
+            <label for="Password">ADMIN PASSWORD:</label>
+            <input type="password" id="Password" name="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function showLoginForm1() {
+            // Show the login form for 
+            document.getElementById('loginForm1').style.display = 'block';
+            // Hide the login form for admin
+            document.getElementById('loginForm').style.display = 'none';
+        }
+
+        function validateLogin() {
+            // Check if  credentials are correct
+            var Username = document.getElementById('Username').value;
+            var Password = document.getElementById('Password').value;
+
+            if (Username !== 'cyusa' || Password !== 'qqqq1111') {
+                // Display an alert for incorrect credentials
+                alert('Wrong username or password for !');
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+
+</html>

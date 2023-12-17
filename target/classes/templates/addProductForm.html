@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Product</title>
+    <link rel="icon" href="https://previews.123rf.com/images/sarahdesign/sarahdesign1506/sarahdesign150602718/41011177-clients-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/admin.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li> <a th:href="@{/admin}">BACK TO PORTAL</a></li>
+                <li> <a th:href="@{/dashboard}">BACK TO DASHBOARD</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="welcome-container">
+        <h1>Add Product</h1>
+        
+    </div>
+
+    <div class="section">
+        <main>
+            
+            <form th:action="@{/saveProduct}" method="post" th:object="${newProduct}">
+               
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" th:field="*{name}" required>
+
+                <label for="imageUrl">Image URL:</label>
+                <input type="text" id="imageUrl" th:field="*{imageUrl}" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" th:field="*{price}" required>
+
+                <button type="submit">Save Product</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
