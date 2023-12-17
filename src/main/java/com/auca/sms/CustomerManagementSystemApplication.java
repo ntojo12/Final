@@ -19,7 +19,7 @@ public class CustomerManagementSystemApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {	
-		
+	
 		
 			
 	}
